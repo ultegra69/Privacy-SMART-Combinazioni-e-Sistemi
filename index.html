@@ -11,12 +11,15 @@
       --card: #ffffff;
       --text: #1f2937;
       --muted: #6b7280;
-      --accent: #1d4ed8;
+      --accent: #15803d;
+      --warning-bg: #fff7ed;
+      --warning-border: #f59e0b;
+      --warning-text: #7c2d12;
+      --info-bg: #ecfdf5;
+      --info-border: #86efac;
       --border: #e5e7eb;
     }
-
     * { box-sizing: border-box; }
-
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
@@ -24,13 +27,11 @@
       background: var(--bg);
       color: var(--text);
     }
-
     .container {
       max-width: 900px;
       margin: 0 auto;
       padding: 32px 20px 56px;
     }
-
     .card {
       background: var(--card);
       border: 1px solid var(--border);
@@ -38,40 +39,51 @@
       padding: 32px 24px;
       box-shadow: 0 8px 24px rgba(0,0,0,0.04);
     }
-
     h1 {
       margin-top: 0;
       margin-bottom: 8px;
       font-size: 2rem;
       line-height: 1.2;
     }
-
     .subtitle {
       margin-top: 0;
       color: var(--muted);
       font-size: 1rem;
     }
-
     h2 {
       margin-top: 32px;
       margin-bottom: 10px;
       font-size: 1.2rem;
       color: var(--accent);
     }
-
-    p {
-      margin: 0 0 14px 0;
+    p { margin: 0 0 14px 0; }
+    ul { margin: 0 0 14px 22px; padding: 0; }
+    li { margin-bottom: 8px; }
+    .warning-box {
+      margin: 22px 0 26px;
+      padding: 18px 20px;
+      border-radius: 14px;
+      border: 2px solid var(--warning-border);
+      background: var(--warning-bg);
+      color: var(--warning-text);
+      font-weight: 800;
+      font-size: 1.05rem;
     }
-
-    ul {
-      margin: 0 0 14px 22px;
-      padding: 0;
+    .warning-box span {
+      display: block;
+      margin-top: 6px;
+      font-weight: 600;
+      font-size: 0.96rem;
     }
-
-    li {
-      margin-bottom: 8px;
+    .info-box {
+      margin: 18px 0 24px;
+      padding: 16px 18px;
+      border-radius: 14px;
+      border: 1px solid var(--info-border);
+      background: var(--info-bg);
+      color: #14532d;
+      font-weight: 600;
     }
-
     .footer {
       margin-top: 36px;
       padding-top: 20px;
@@ -79,25 +91,11 @@
       color: var(--muted);
       font-size: 0.95rem;
     }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
     @media (max-width: 600px) {
-      .card {
-        padding: 24px 18px;
-        border-radius: 12px;
-      }
-
-      h1 {
-        font-size: 1.7rem;
-      }
+      .card { padding: 24px 18px; border-radius: 12px; }
+      h1 { font-size: 1.7rem; }
     }
   </style>
 </head>
@@ -106,118 +104,99 @@
     <section class="card">
       <h1>Privacy Policy</h1>
       <p class="subtitle"><strong>App:</strong> SMART Combinazioni e Sistemi</p>
+      <p class="subtitle"><strong>Versione informativa:</strong> aggiornata alla release 11.2.12 - Clean UI</p>
 
-      <p>
-        La presente informativa descrive le modalità di trattamento dei dati per l’app
-        <em>SMART Combinazioni e Sistemi</em> (di seguito, “App”).
-      </p>
+      <p>La presente informativa descrive le modalità di trattamento dei dati per l’app <em>SMART Combinazioni e Sistemi</em> (di seguito, “App”).</p>
+
+      <div class="warning-box">
+        L’app non prevede numeri vincenti e non aumenta le probabilità di vincita.
+        <span>L’App è uno strumento di supporto alla generazione di combinazioni numeriche e non sostituisce le informazioni ufficiali del concessionario o dei canali autorizzati.</span>
+      </div>
+
+      <div class="info-box">
+        L’App non richiede registrazione, non raccoglie dati personali, non utilizza sistemi di tracciamento, non mostra pubblicità e non invia combinazioni o preferenze a server dello sviluppatore.
+      </div>
 
       <h2>1. Titolare del trattamento</h2>
-      <p>
-        Il titolare del trattamento è:<br>
-        <strong>Leonardo Trotta</strong><br>
-        E-mail: <a href="mailto:etika.app@mail.com">etika.app@mail.com</a>
-      </p>
+      <p>Il titolare del trattamento è:<br><strong>Leonardo Trotta</strong><br>E-mail: <a href="mailto:etika.app@mail.com">etika.app@mail.com</a></p>
 
       <h2>2. Dati personali</h2>
-      <p>
-        L’App <strong>non richiede registrazione, non raccoglie né trasmette dati personali a server propri</strong>.
-        Non vengono richiesti dati identificativi, né informazioni sensibili per l’utilizzo ordinario.
-      </p>
+      <p>L’App <strong>non richiede registrazione, non raccoglie né trasmette dati personali a server propri</strong>.</p>
+      <p>In particolare, l’App non richiede e non tratta:</p>
+      <ul>
+        <li>nome, cognome o dati identificativi dell’utente;</li>
+        <li>indirizzo e-mail o numero di telefono;</li>
+        <li>posizione geografica;</li>
+        <li>contatti, foto, documenti o altri contenuti personali;</li>
+        <li>identificativi pubblicitari o strumenti di profilazione.</li>
+      </ul>
 
-      <h2>3. Motore di generazione locale</h2>
-      <p>
-        Lo <strong>Smart Balance Engine</strong> opera localmente sul dispositivo: non utilizza dati personali,
-        non invia informazioni allo sviluppatore e non impiega modelli predittivi. Il motore organizza le combinazioni
-        secondo criteri dichiarati di distribuzione e bilanciamento, senza alcuna promessa di vincita o aumento delle probabilità.
-      </p>
+      <h2>3. Motore locale di generazione bilanciata</h2>
+      <p>Il <strong>motore locale di generazione bilanciata</strong> opera sul dispositivo e genera combinazioni numeriche secondo criteri di equilibrio, come distribuzione per fasce, bilanciamento pari/dispari e controllo duplicati.</p>
+      <p>La classificazione del risultato (ad esempio <strong>Bilanciata</strong>, <strong>Accettabile</strong> o <strong>Poco bilanciata</strong>) ha solo valore informativo e qualitativo.</p>
+      <p>Il motore <strong>non utilizza dati personali, non invia informazioni allo sviluppatore e non impiega modelli predittivi</strong>. Non prevede numeri vincenti, non garantisce vincite e non aumenta le probabilità di vincita.</p>
 
       <h2>4. Salvataggio locale sul dispositivo</h2>
-      <p>
-        L’App funziona prevalentemente <strong>in locale sul dispositivo dell’utente</strong>.
-        Alcuni contenuti e preferenze possono essere salvati localmente per consentire il corretto funzionamento,
-        ad esempio:
-      </p>
+      <p>L’App funziona prevalentemente <strong>in locale sul dispositivo dell’utente</strong>. Alcuni contenuti possono essere salvati localmente per consentire il corretto funzionamento e migliorare l’esperienza d’uso.</p>
+      <p>Esempi di dati salvati localmente:</p>
       <ul>
-        <li>risultati generati e salvati volontariamente dall’utente</li>
-        <li>cache tecnica delle informazioni pubbliche sulle estrazioni</li>
-        <li>stato del consenso legale mostrato nell’App</li>
+        <li>combinazioni generate o salvate volontariamente dall’utente;</li>
+        <li>preferenze o impostazioni dell’interfaccia, ove previste;</li>
+        <li>cache tecnica dell’ultima estrazione pubblica letta correttamente;</li>
+        <li>stato di presa visione di messaggi legali o informativi mostrati nell’App.</li>
       </ul>
-      <p>
-        Tali dati restano nel contesto locale dell’App e <strong>non vengono inviati a server dello sviluppatore</strong>.
-      </p>
+      <p>Tali dati restano nel contesto locale dell’App e <strong>non vengono inviati a server dello sviluppatore</strong>. L’utente può rimuovere le combinazioni salvate tramite le funzioni disponibili nell’App oppure eliminando i dati dell’app dal dispositivo.</p>
 
-      <h2>5. Connessione a Internet e fonti esterne</h2>
-      <p>
-        L’App può utilizzare una connessione a Internet esclusivamente per il recupero di
-        <strong>informazioni pubbliche relative alle estrazioni</strong>, quando disponibili.
-      </p>
-      <p>
-        Il recupero può avvenire tramite <strong>fonti ufficiali e mirror tecnici di sola lettura</strong>
-        usati per migliorare affidabilità e leggibilità del contenuto pubblico.
-      </p>
-      <p>
-        In tali operazioni, <strong>non viene trasmesso alcun dato personale dell’utente a server propri</strong>.
-      </p>
+      <h2>5. Connessione a Internet e dati pubblici sulle estrazioni</h2>
+      <p>L’App può utilizzare una connessione Internet esclusivamente per recuperare <strong>informazioni pubbliche relative alle estrazioni</strong>, quando disponibili.</p>
+      <p>Il recupero dei dati può avvenire tramite fonti pubbliche consultabili online e meccanismi tecnici di lettura pensati per migliorare l’affidabilità dell’aggiornamento all’interno della WebView Android.</p>
+      <p>Durante tali operazioni, <strong>l’App non trasmette combinazioni, preferenze o dati personali dell’utente a server dello sviluppatore</strong>.</p>
+      <p>Qualora l’aggiornamento online non fosse disponibile, l’App può mostrare l’ultima informazione pubblica valida memorizzata localmente in cache.</p>
 
-      <h2>6. Condivisione dei contenuti</h2>
-      <p>
-        L’App può consentire la condivisione delle combinazioni generate tramite applicazioni di terze parti,
-        ad esempio e-mail o app di messaggistica.
-      </p>
-      <p>
-        Tali operazioni sono gestite direttamente dalle applicazioni installate sul dispositivo dell’utente.
-        Lo sviluppatore <strong>non riceve né conserva i contenuti condivisi</strong>.
-      </p>
+      <h2>6. Storico combinazioni e funzioni disponibili</h2>
+      <p>La sezione storico consente di gestire in modo semplice le combinazioni salvate localmente.</p>
+      <p>Le funzioni disponibili sono:</p>
+      <ul>
+        <li><strong>Riusa</strong>: reinserisce i numeri nel tabellone dell’App;</li>
+        <li><strong>Condividi</strong>: consente la condivisione tramite le applicazioni installate sul dispositivo;</li>
+        <li><strong>Elimina</strong>: rimuove la combinazione salvata dallo storico locale.</li>
+      </ul>
 
-      <h2>7. Tracciamento, analytics e pubblicità</h2>
+      <h2>7. Condivisione dei contenuti</h2>
+      <p>L’App può consentire la condivisione delle combinazioni generate tramite applicazioni di terze parti, ad esempio e-mail, app di messaggistica o altre app installate sul dispositivo.</p>
+      <p>La condivisione avviene solo su iniziativa dell’utente ed è gestita direttamente dalle applicazioni selezionate. Lo sviluppatore <strong>non riceve, non visualizza e non conserva</strong> i contenuti condivisi.</p>
+
+      <h2>8. Tracciamento, analytics e pubblicità</h2>
       <p>L’App <strong>non utilizza</strong>:</p>
       <ul>
-        <li>sistemi di tracciamento</li>
-        <li>strumenti di analytics</li>
-        <li>servizi pubblicitari di terze parti</li>
+        <li>sistemi di tracciamento;</li>
+        <li>strumenti di analytics;</li>
+        <li>servizi pubblicitari di terze parti;</li>
+        <li>SDK pubblicitari o strumenti di profilazione.</li>
       </ul>
 
-      <h2>8. Finalità dell’App</h2>
-      <p>
-        L’App è uno <strong>strumento di supporto alla generazione di combinazioni numeriche</strong>
-        basato su criteri casuali.
-      </p>
-      <p>
-        L’App può essere utilizzata come supporto informativo per giochi numerici,
-        ma <strong>non garantisce vincite e non fornisce previsioni certe</strong>.
-      </p>
+      <h2>9. Finalità dell’App</h2>
+      <p>L’App è uno <strong>strumento di supporto alla generazione di combinazioni numeriche</strong>, basato su criteri di equilibrio e su regole dichiarate di bilanciamento.</p>
+      <p>L’App può essere utilizzata come supporto informativo per giochi numerici, ma <strong>non prevede numeri vincenti, non garantisce vincite, non fornisce previsioni certe e non aumenta le probabilità di vincita</strong>.</p>
 
-      <h2>9. Minori</h2>
-      <p>
-        L’App non è destinata ai minori.
-        L’eventuale utilizzo deve avvenire nel rispetto della normativa vigente in materia di gioco,
-        che ne vieta l’accesso ai minori.
-      </p>
+      <h2>10. Minori</h2>
+      <p>L’App non è destinata ai minori. L’eventuale utilizzo deve avvenire nel rispetto della normativa vigente in materia di gioco, che ne vieta l’accesso ai minori.</p>
 
-      <h2>10. Responsabilità</h2>
-      <p>
-        L’App ha finalità esclusivamente informative e di supporto.
-        Lo sviluppatore <strong>non è responsabile</strong> per utilizzi impropri dell’App
-        o per decisioni prese dall’utente sulla base dei risultati generati.
-      </p>
+      <h2>11. Responsabilità</h2>
+      <p>L’App ha finalità esclusivamente informative e di supporto. Lo sviluppatore <strong>non è responsabile</strong> per utilizzi impropri dell’App, decisioni di gioco o decisioni prese dall’utente sulla base dei risultati generati.</p>
+      <p>Le informazioni relative alle estrazioni, se mostrate, hanno carattere informativo e devono essere sempre verificate sui canali ufficiali o autorizzati.</p>
 
-      <h2>11. Modifiche alla presente informativa</h2>
-      <p>
-        La presente informativa può essere aggiornata nel tempo.
-        Eventuali modifiche saranno pubblicate su questa pagina.
-      </p>
+      <h2>12. Sicurezza</h2>
+      <p>Poiché l’App non raccoglie dati personali e conserva le combinazioni solo localmente, il rischio di esposizione di dati personali verso lo sviluppatore è assente.</p>
+      <p>La sicurezza dei dati locali dipende anche dalle impostazioni e dalla protezione del dispositivo dell’utente.</p>
+
+      <h2>13. Modifiche alla presente informativa</h2>
+      <p>La presente informativa può essere aggiornata nel tempo. Eventuali modifiche saranno pubblicate su questa pagina.</p>
 
       <h2>Contatti</h2>
-      <p>
-        Per qualsiasi informazione relativa alla presente informativa è possibile contattare:<br>
-        <strong>Leonardo Trotta</strong><br>
-        E-mail: <a href="mailto:etika.app@mail.com">etika.app@mail.com</a>
-      </p>
+      <p>Per qualsiasi informazione relativa alla presente informativa è possibile contattare:<br><strong>Leonardo Trotta</strong><br>E-mail: <a href="mailto:etika.app@mail.com">etika.app@mail.com</a></p>
 
-      <div class="footer">
-        Ultimo aggiornamento: 18 aprile 2026
-      </div>
+      <div class="footer">Ultimo aggiornamento: 28 aprile 2026</div>
     </section>
   </main>
 </body>
